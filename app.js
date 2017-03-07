@@ -13,6 +13,7 @@ var mRoute = new Routes;
 /***************************************/
 
 app.get("/",mRoute.home);
+app.post("/api/login",mRoute.login);
 
 
 
