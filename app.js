@@ -7,14 +7,17 @@ import localStrategy from 'passport-local';
 import plmongoose from 'passport-local-mongoose';
 import user from './models/user';
 import {indexRoutes} from './controllers/indexRoutes';
+import {userRoutes} from './controllers/userRoutes';
 
 // declarations ===========================================================================================================
 
 const app=express();
 const port=3000;
 var indexRoute = new indexRoutes;
+var userRoute = new userRoutes;
+
 // db connection ==========================================================================================================
-mongoose.Promise = global.Promise;
+mongoose.Promise =require('bluebird');
 mongoose.connect('mongodb://localhost/stayways');
 
 // settings  ===============================================================================================================
@@ -35,6 +38,7 @@ app.set('view engine','ejs');
 
 //Routes ======================================================================================================================
 app.get('/',indexRoute.home);
+app.post('/signup',userRoute.signUp);
 
 
 

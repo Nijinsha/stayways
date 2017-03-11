@@ -3,7 +3,7 @@ import express from 'express';
 
 class indexRoutes{
     home(req,res){
-        res.render('home2');
+        res.render('home');
     }
 }
 export {indexRoutes};

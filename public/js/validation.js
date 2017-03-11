@@ -52,6 +52,7 @@
                  $('#info').html("on success");
                  console.log("on success");
                  console.log(fields);
+                 this.submit();
                  event.preventDefault();
              },
              onFailure: function(formErrors, fields) {
@@ -88,9 +89,10 @@
 
              },
              onSuccess: function(event, fields) {
+                 
+                 $('#signupform').submit();
                  $('#loginInfo').html("on success");
-                 console.log("on success");
-                 console.log(fields);
+                 
                  event.preventDefault();
              },
              onFailure: function(formErrors, fields) {
@@ -102,7 +104,7 @@
          });
 
 
-     $('#submitButton').on('click', function() {
+     $('#signUpButton').on('click', function() {
 
          $('#signupform').form('validate form');
      });

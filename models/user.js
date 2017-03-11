@@ -3,7 +3,7 @@ import plmongoose from 'passport-local-mongoose';
 
 
 var userSchema =new mongoose.Schema({
-    email       :String,
+    username    :String,
     password    :String,
     power       :String,
     joinedAt    :Date
